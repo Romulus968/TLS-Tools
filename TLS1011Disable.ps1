@@ -47,6 +47,7 @@ write-host "TLS 1.0 Disabled successfully. To verify, reboot your machine, revie
 }
 
 Catch {
+    $_.Exception | Out-File C:\error.log -Append
     write-host "Something went wrong. Please contact Nic C. for assistance"
     }
 
@@ -99,6 +100,7 @@ if ($hostinput -eq 'Yes') {
     }
 
     Catch {
+        $_.Exception | Out-File C:\error11.log -Append
         Write-Host "Something went wrong. Retry the script, and contact Nic if it still doesn't work."
     }
 
